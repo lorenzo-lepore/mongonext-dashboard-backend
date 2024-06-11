@@ -1,0 +1,35 @@
+version: '3.8'
+name: "web-app"
+services:
+#  backend:
+#    image: spring-api
+#    container_name: SpringApplication
+#    ports:
+#      - "8091:8091"
+  mongodb:
+    image: mongo
+    container_name: MongoDB
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+  mongo-express:
+    image: mongo-express
+    container_name: MongoExpress
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+volumes:
+  data: {}
+networks:
+  default:
+    name: mongodb_network
+
+
