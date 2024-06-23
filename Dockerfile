@@ -1,7 +1,3 @@
-FROM amazoncorretto:21-alpine-full
-
-ARG JAR_FILE=target/*.jar
-
-COPY ${JAR_FILE} app.jar
-
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+FROM amazoncorretto:22-alpine-full
+COPY target/springbackend-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
