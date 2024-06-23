@@ -10,7 +10,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
   mongonext:
     build: .
-    image: mongonext
+    image: mongonext-backend
     container_name: mongonext-backend
     ports:
       - "8080:8080"
