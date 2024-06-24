@@ -19,7 +19,7 @@ GET http://localhost:8091/customers/numberOfCustomers
 GET http://localhost:8091/customers/numberOfRelatedInvoices?query=ste
 ###
 
-# Execute an aggregation needed for the customers page in the front-end
+# Execute an aggregation needed for the customers page in the front-end; can be filtered using the query parameter
 # Format: http://localhost:8091/customers/getFilteredAggregation?query={query}
 GET http://localhost:8091/customers/getFilteredAggregation?query=
 ###
