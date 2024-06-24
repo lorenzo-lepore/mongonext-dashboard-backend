@@ -38,7 +38,7 @@ POST http://localhost:8091/users/save
 Content-Type: application/json
 
 {
-    "email": "user(at*)nextmail.com",
+    "email": "new-user@nextmail.com",
     "name": "User",
     "password": "password"
 }
