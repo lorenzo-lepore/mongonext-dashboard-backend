@@ -1,0 +1,3202 @@
+{
+	"info": {
+		"_postman_id": "478925d5-6a0f-46b5-a343-b6acc39324a3",
+		"name": "MongoNext",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26264246"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Test",
+					"item": [
+						{
+							"name": "Test Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/saveTest",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"saveTest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Save",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/customers/saveTest",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"customers",
+												"saveTest"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 19:39:24 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"6679cb6ca4e79014dd13ccbc\",\n    \"email\": \"mail@mail.com\",\n    \"imageUrl\": \"/imageURL.png\",\n    \"name\": \"Name\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Test Controller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"test"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Controller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/customers/test",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"customers",
+												"test"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 19:38:06 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Customer Controller is working"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Save Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"example@mail.com\",\r\n  \"imageUrl\": \"/example.jpg\",\r\n  \"name\": \"Example Example\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/customers/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Save Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"example@mail.com\",\r\n  \"imageUrl\": \"/example.jpg\",\r\n  \"name\": \"Example Example\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/customers/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:09:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6679d28fa4e79014dd13cccb\",\n    \"email\": \"example@mail.com\",\n    \"imageUrl\": \"/example.jpg\",\n    \"name\": \"Example Example\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:19:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"65c75b2973b88a64e7649b3d\",\n        \"email\": \"steven@tey.com\",\n        \"imageUrl\": \"/customers/steven-tey.png\",\n        \"name\": \"Steven Tay\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b3f\",\n        \"email\": \"steph@dietz.com\",\n        \"imageUrl\": \"/customers/steph-dietz.png\",\n        \"name\": \"Steph Dietz\"\n    },\n    {\n        \"id\": \"6679cb6ca4e79014dd13ccbc\",\n        \"email\": \"mail@mail.com\",\n        \"imageUrl\": \"/imageURL.png\",\n        \"name\": \"Name\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b40\",\n        \"email\": \"michael@novotny.com\",\n        \"imageUrl\": \"/customers/michael-novotny.png\",\n        \"name\": \"Michael Novotny\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b3b\",\n        \"email\": \"lee@robinson.com\",\n        \"imageUrl\": \"/customers/lee-robinson.png\",\n        \"name\": \"Lee Robinson\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b3c\",\n        \"email\": \"hector@simpson.com\",\n        \"imageUrl\": \"/customers/hector-simpson.png\",\n        \"name\": \"Hector Simpson\"\n    },\n    {\n        \"id\": \"6679d28fa4e79014dd13cccb\",\n        \"email\": \"example@mail.com\",\n        \"imageUrl\": \"/example.jpg\",\n        \"name\": \"Example Example\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b42\",\n        \"email\": \"evil@rabbit.com\",\n        \"imageUrl\": \"/customers/evil-rabbit.png\",\n        \"name\": \"Evil Rabbit\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b44\",\n        \"email\": \"emil@kowalski.com\",\n        \"imageUrl\": \"/customers/emil-kowalski.png\",\n        \"name\": \"Emil Kowalski\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b3a\",\n        \"email\": \"delba@oliveira.com\",\n        \"imageUrl\": \"/customers/delba-de-oliveira.png\",\n        \"name\": \"Delba de Oliveira\"\n    },\n    {\n        \"id\": \"65c75b2a73b88a64e7649d9e\",\n        \"email\": \"balazs@orban.com\",\n        \"imageUrl\": \"/customers/balazs-orban.png\",\n        \"name\": \"Balazs Orban\"\n    },\n    {\n        \"id\": \"65c75b2973b88a64e7649b45\",\n        \"email\": \"amy@burns.com\",\n        \"imageUrl\": \"/customers/amy-burns.png\",\n        \"name\": \"Amy Burns\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/id/65c75b2973b88a64e7649b3d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"id",
+								"65c75b2973b88a64e7649b3d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/id/65c75b2973b88a64e7649b3d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"id",
+										"65c75b2973b88a64e7649b3d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 19:42:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65c75b2973b88a64e7649b3d\",\n    \"email\": \"steven@tey.com\",\n    \"imageUrl\": \"/customers/steven-tey.png\",\n    \"name\": \"Steven Tay\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customers Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/numberOfCustomers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"numberOfCustomers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customers Number",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/numberOfCustomers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"numberOfCustomers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:19:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "12"
+						}
+					]
+				},
+				{
+					"name": "Get Number of Customer's Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/numberOfPages?query=delba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"numberOfPages"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "delba"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Number of Customer's Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/numberOfPages?query=delba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"numberOfPages"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "delba"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 19:44:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "2"
+						}
+					]
+				},
+				{
+					"name": "Get Aggregation to Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/getFilteredAggregation?query=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"getFilteredAggregation"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Aggregation to Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/getFilteredAggregation?query=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"getFilteredAggregation"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:04:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"timestamp\": 1707563817,\n            \"date\": \"2024-02-10T11:16:57.000+00:00\"\n        },\n        \"email\": \"amy@burns.com\",\n        \"image_url\": \"/customers/amy-burns.png\",\n        \"name\": \"Amy Burns\",\n        \"total_invoices\": 0,\n        \"total_paid\": 0,\n        \"total_pending\": 0\n    },\n    {\n        \"_id\": {\n            \"timestamp\": 1719257964,\n            \"date\": \"2024-06-24T19:39:24.000+00:00\"\n        },\n        \"email\": \"mail@mail.com\",\n        \"image_url\": \"/imageURL.png\",\n        \"name\": \"Name\",\n        \"total_invoices\": 0,\n        \"total_paid\": 0,\n        \"total_pending\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/update?id=65c75b2973b88a64e7649b3d&name=Steven+Tay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "65c75b2973b88a64e7649b3d"
+								},
+								{
+									"key": "name",
+									"value": "Steven+Tay"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/update?id=65c75b2973b88a64e7649b3d&name=Steven+Taylor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65c75b2973b88a64e7649b3d"
+										},
+										{
+											"key": "name",
+											"value": "Steven+Taylor"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:20:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65c75b2973b88a64e7649b3d\",\n    \"email\": \"steven@tey.com\",\n    \"imageUrl\": \"/customers/steven-tey.png\",\n    \"name\": \"Steven Taylor\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/customers/delete?id=66791c834c47140ad3da934a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"customers",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66791c834c47140ad3da934a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deleted Customer Successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/delete?id=6679d28fa4e79014dd13cccb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679d28fa4e79014dd13cccb"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:23:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Customer Not Found (After Deletion)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/customers/delete?id=6679d28fa4e79014dd13cccb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"customers",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679d28fa4e79014dd13cccb"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:23:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Test",
+					"item": [
+						{
+							"name": "Test Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/saveTest",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"saveTest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Save",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/invoices/saveTest",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"invoices",
+												"saveTest"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 20:10:57 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"6679d2d1a4e79014dd13cccd\",\n    \"customerId\": \"6679d2d1a4e79014dd13cccc\",\n    \"amount\": 123,\n    \"date\": \"2024-06-25T00:10:57.1919502\",\n    \"status\": \"pending\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Test Controller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"test"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Controller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/invoices/test",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"invoices",
+												"test"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 20:10:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Invoice Controller is working"
+								}
+							]
+						},
+						{
+							"name": "Test Aggregation to Customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/aggregate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"aggregate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Aggregation to Customers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/invoices/aggregate",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"invoices",
+												"aggregate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 20:12:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_id\": {\n            \"timestamp\": 1708813859,\n            \"date\": \"2024-02-24T22:30:59.000+00:00\"\n        },\n        \"customer_id\": {\n            \"timestamp\": 1707563817,\n            \"date\": \"2024-02-10T11:16:57.000+00:00\"\n        },\n        \"amount\": 8945,\n        \"date\": \"2023-10-04T00:00:00.000+00:00\",\n        \"status\": \"paid\",\n        \"customer\": [\n            {\n                \"_id\": {\n                    \"timestamp\": 1707563817,\n                    \"date\": \"2024-02-10T11:16:57.000+00:00\"\n                },\n                \"email\": \"delba@oliveira.com\",\n                \"image_url\": \"/customers/delba-de-oliveira.png\",\n                \"name\": \"Delba de Oliveira\"\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"timestamp\": 1718113338,\n            \"date\": \"2024-06-11T13:42:18.000+00:00\"\n        },\n        \"customer_id\": {\n            \"timestamp\": 1707563817,\n            \"date\": \"2024-02-10T11:16:57.000+00:00\"\n        },\n        \"amount\": 20000,\n        \"date\": \"2024-06-11T15:42:18.596+00:00\",\n        \"status\": \"pending\",\n        \"customer\": [\n            {\n                \"_id\": {\n                    \"timestamp\": 1707563817,\n                    \"date\": \"2024-02-10T11:16:57.000+00:00\"\n                },\n                \"email\": \"delba@oliveira.com\",\n                \"image_url\": \"/customers/delba-de-oliveira.png\",\n                \"name\": \"Delba de Oliveira\"\n            }\n        ]\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Save Invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/save?customerId=65c75b2973b88a64e7649b3f&amount=10001&status=paid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"save"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "65c75b2973b88a64e7649b3f"
+								},
+								{
+									"key": "amount",
+									"value": "10001"
+								},
+								{
+									"key": "status",
+									"value": "paid"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Save Invoice",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/save?customerId=65c75b2973b88a64e7649b3f&amount=10001&status=paid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"save"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "65c75b2973b88a64e7649b3f"
+										},
+										{
+											"key": "amount",
+											"value": "10001"
+										},
+										{
+											"key": "status",
+											"value": "paid"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:51:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6679dc5ea4e79014dd13cccf\",\n    \"customerId\": \"65c75b2973b88a64e7649b3f\",\n    \"amount\": 10001,\n    \"date\": \"2024-06-25T00:51:42.3755433\",\n    \"status\": \"paid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:12:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"65da6e23fe5a168124b14cbc\",\n        \"customerId\": \"65c75b2973b88a64e7649b3a\",\n        \"amount\": 8945,\n        \"date\": \"2023-10-04T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cbd\",\n        \"customerId\": \"65c75b2973b88a64e7649b3b\",\n        \"amount\": 20348,\n        \"date\": \"2022-11-14T01:00:00\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cbe\",\n        \"customerId\": \"65c75b2973b88a64e7649b3b\",\n        \"amount\": 500,\n        \"date\": \"2023-08-19T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cbf\",\n        \"customerId\": \"65c75b2973b88a64e7649b3c\",\n        \"amount\": 8945,\n        \"date\": \"2023-06-18T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc1\",\n        \"customerId\": \"65c75b2973b88a64e7649b3d\",\n        \"amount\": 44800,\n        \"date\": \"2023-09-10T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc2\",\n        \"customerId\": \"65c75b2973b88a64e7649b3d\",\n        \"amount\": 32545,\n        \"date\": \"2023-06-09T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc3\",\n        \"customerId\": \"65c75b2973b88a64e7649b3f\",\n        \"amount\": 3040,\n        \"date\": \"2022-10-29T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc4\",\n        \"customerId\": \"65c75b2973b88a64e7649b3f\",\n        \"amount\": 1250,\n        \"date\": \"2023-06-17T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc5\",\n        \"customerId\": \"65c75b2973b88a64e7649b40\",\n        \"amount\": 34577,\n        \"date\": \"2023-08-05T02:00:00\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc6\",\n        \"customerId\": \"65c75b2973b88a64e7649b40\",\n        \"amount\": 8546,\n        \"date\": \"2023-06-07T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc7\",\n        \"customerId\": \"65c75b2973b88a64e7649b40\",\n        \"amount\": 8945,\n        \"date\": \"2023-06-03T02:00:00\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc8\",\n        \"customerId\": \"65c75b2973b88a64e7649b42\",\n        \"amount\": 666,\n        \"date\": \"2023-06-27T02:00:00\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cc9\",\n        \"customerId\": \"65c75b2973b88a64e7649b44\",\n        \"amount\": 54246,\n        \"date\": \"2023-07-16T02:00:00\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"661be8c8742d0379396d31a9\",\n        \"customerId\": \"65c75b2973b88a64e7649b3f\",\n        \"amount\": 31200,\n        \"date\": \"2024-04-14T18:31:36.384\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"661be8d3742d0379396d31aa\",\n        \"customerId\": \"65c75b2a73b88a64e7649d9e\",\n        \"amount\": 423500,\n        \"date\": \"2024-04-14T18:31:47.192\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"6668543a9e46b332a2310d7a\",\n        \"customerId\": \"65c75b2973b88a64e7649b3a\",\n        \"amount\": 20000,\n        \"date\": \"2024-06-11T17:42:18.596\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"66794fdc2e8c7814c71512de\",\n        \"customerId\": \"65c75b2973b88a64e7649b40\",\n        \"amount\": 12344,\n        \"date\": \"2024-06-24T14:52:12.691\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"6679d2d1a4e79014dd13cccd\",\n        \"customerId\": \"6679d2d1a4e79014dd13cccc\",\n        \"amount\": 123,\n        \"date\": \"2024-06-25T00:10:57.191\",\n        \"status\": \"pending\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Invoice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/6668543a9e46b332a2310d7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"6668543a9e46b332a2310d7a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Invoice",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/6668543a9e46b332a2310d7a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"6668543a9e46b332a2310d7a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:17:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6668543a9e46b332a2310d7a\",\n    \"customerId\": \"65c75b2973b88a64e7649b3a\",\n    \"amount\": 20000,\n    \"date\": \"2024-06-11T17:42:18.596\",\n    \"status\": \"pending\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Latest Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/latest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"latest"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Latest Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/latest",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"latest"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:13:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6679d2d1a4e79014dd13cccd\",\n        \"customerId\": \"6679d2d1a4e79014dd13cccc\",\n        \"amount\": 123,\n        \"date\": \"2024-06-25T00:10:57.191\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"66794fdc2e8c7814c71512de\",\n        \"customerId\": \"65c75b2973b88a64e7649b40\",\n        \"amount\": 12344,\n        \"date\": \"2024-06-24T14:52:12.691\",\n        \"status\": \"paid\"\n    },\n    {\n        \"id\": \"6668543a9e46b332a2310d7a\",\n        \"customerId\": \"65c75b2973b88a64e7649b3a\",\n        \"amount\": 20000,\n        \"date\": \"2024-06-11T17:42:18.596\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"661be8d3742d0379396d31aa\",\n        \"customerId\": \"65c75b2a73b88a64e7649d9e\",\n        \"amount\": 423500,\n        \"date\": \"2024-04-14T18:31:47.192\",\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": \"661be8c8742d0379396d31a9\",\n        \"customerId\": \"65c75b2973b88a64e7649b3f\",\n        \"amount\": 31200,\n        \"date\": \"2024-04-14T18:31:36.384\",\n        \"status\": \"paid\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Number of Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/numberOfInvoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"numberOfInvoices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Number of Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/numberOfInvoices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"numberOfInvoices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:14:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "18"
+						}
+					]
+				},
+				{
+					"name": "Get Sum of Paid Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/sumOfPaidInvoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"sumOfPaidInvoices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Sum of Paid Invoice",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/sumOfPaidInvoices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"sumOfPaidInvoices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:46:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "161060"
+						}
+					]
+				},
+				{
+					"name": "Get Sum of Pending Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/sumOfPendingInvoices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"sumOfPendingInvoices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Sum of Pending Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/sumOfPendingInvoices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"sumOfPendingInvoices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:49:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "553337"
+						}
+					]
+				},
+				{
+					"name": "Get Filtered Invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/getFilteredInvoices?query=del&currentPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"getFilteredInvoices"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "del"
+								},
+								{
+									"key": "currentPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Filtered Invoices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/getFilteredInvoices?query=del&currentPage=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"getFilteredInvoices"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "del"
+										},
+										{
+											"key": "currentPage",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:16:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6668543a9e46b332a2310d7a\",\n        \"customerId\": \"65c75b2973b88a64e7649b3a\",\n        \"amount\": 20000,\n        \"date\": \"2024-06-11T17:42:18.596\",\n        \"status\": \"pending\",\n        \"customer\": [\n            {\n                \"id\": \"65c75b2973b88a64e7649b3a\",\n                \"email\": \"delba@oliveira.com\",\n                \"imageUrl\": \"/customers/delba-de-oliveira.png\",\n                \"name\": \"Delba de Oliveira\"\n            }\n        ]\n    },\n    {\n        \"id\": \"65da6e23fe5a168124b14cbc\",\n        \"customerId\": \"65c75b2973b88a64e7649b3a\",\n        \"amount\": 8945,\n        \"date\": \"2023-10-04T02:00:00\",\n        \"status\": \"paid\",\n        \"customer\": [\n            {\n                \"id\": \"65c75b2973b88a64e7649b3a\",\n                \"email\": \"delba@oliveira.com\",\n                \"imageUrl\": \"/customers/delba-de-oliveira.png\",\n                \"name\": \"Delba de Oliveira\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update Invoice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/update?id=66794fdc2e8c7814c71512de&amount=12344&status=paid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66794fdc2e8c7814c71512de"
+								},
+								{
+									"key": "amount",
+									"value": "12344"
+								},
+								{
+									"key": "status",
+									"value": "paid"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Invoice",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/update?id=66794fdc2e8c7814c71512de&amount=12344&status=paid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66794fdc2e8c7814c71512de"
+										},
+										{
+											"key": "amount",
+											"value": "12344"
+										},
+										{
+											"key": "status",
+											"value": "paid"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:53:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"66794fdc2e8c7814c71512de\",\n    \"customerId\": \"65c75b2973b88a64e7649b40\",\n    \"amount\": 12344,\n    \"date\": \"2024-06-24T14:52:12.691\",\n    \"status\": \"paid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Invoice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/invoices/delete?id=6679d2d1a4e79014dd13cccd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"invoices",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6679d2d1a4e79014dd13cccd"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deleted Invoice Successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/delete?id=6679d2d1a4e79014dd13cccd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679d2d1a4e79014dd13cccd"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:47:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Invoice Not Found (After Deletion)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/invoices/delete?id=6679d2d1a4e79014dd13cccd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"invoices",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679d2d1a4e79014dd13cccd"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 20:49:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Revenue",
+			"item": [
+				{
+					"name": "Test",
+					"item": [
+						{
+							"name": "Test Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/saveTest",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"saveTest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Save",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/revenues/saveTest",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"revenues",
+												"saveTest"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 22:33:47 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"6679f44ba4e79014dd13ccd0\",\n    \"month\": \"Dec\",\n    \"amount\": 12345\n}"
+								}
+							]
+						},
+						{
+							"name": "Test Controller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"test"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Controller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/revenues/test",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"revenues",
+												"test"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "29"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 22:34:23 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Revenue Controller is working"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Save Revenue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"month\": \"Dec\",\r\n  \"amount\": 2900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/revenues/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"revenues",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Save Revenue",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"month\": \"Dec\",\r\n  \"amount\": 2900\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/revenues/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:43:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6679f6aca4e79014dd13ccd2\",\n    \"month\": \"Dec\",\n    \"amount\": 2900\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Revenues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/revenues/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"revenues",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Revenues",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:36:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"667982232e8c7814c7151300\",\n        \"month\": \"Jan\",\n        \"amount\": 1800\n    },\n    {\n        \"id\": \"6679822d2e8c7814c7151302\",\n        \"month\": \"Feb\",\n        \"amount\": 2500\n    },\n    {\n        \"id\": \"667982342e8c7814c7151303\",\n        \"month\": \"Mar\",\n        \"amount\": 3000\n    },\n    {\n        \"id\": \"667983d72e8c7814c715130c\",\n        \"month\": \"Apr\",\n        \"amount\": 1600\n    },\n    {\n        \"id\": \"667983dd2e8c7814c715130d\",\n        \"month\": \"May\",\n        \"amount\": 1800\n    },\n    {\n        \"id\": \"667983e32e8c7814c715130e\",\n        \"month\": \"Jun\",\n        \"amount\": 2300\n    },\n    {\n        \"id\": \"667983e82e8c7814c715130f\",\n        \"month\": \"Jul\",\n        \"amount\": 3000\n    },\n    {\n        \"id\": \"667983f52e8c7814c7151310\",\n        \"month\": \"Aug\",\n        \"amount\": 1000\n    },\n    {\n        \"id\": \"667983fb2e8c7814c7151311\",\n        \"month\": \"Sep\",\n        \"amount\": 1200\n    },\n    {\n        \"id\": \"667984002e8c7814c7151312\",\n        \"month\": \"Oct\",\n        \"amount\": 2000\n    },\n    {\n        \"id\": \"667984752e8c7814c7151314\",\n        \"month\": \"Nov\",\n        \"amount\": 1800\n    },\n    {\n        \"id\": \"66798ddfb0048576ff033469\",\n        \"month\": \"Dec\",\n        \"amount\": 2900\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Revenue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/revenues/id/667983f52e8c7814c7151310",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"revenues",
+								"id",
+								"667983f52e8c7814c7151310"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Revenue",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/id/667983f52e8c7814c7151310",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"id",
+										"667983f52e8c7814c7151310"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:36:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"667983f52e8c7814c7151310\",\n    \"month\": \"Aug\",\n    \"amount\": 1000\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Revenue",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/revenues/update?id=667983fb2e8c7814c7151311&amount=1200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"revenues",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "667983fb2e8c7814c7151311"
+								},
+								{
+									"key": "amount",
+									"value": "1200"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Revenue",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/update?id=667983fb2e8c7814c7151311&amount=1200",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "667983fb2e8c7814c7151311"
+										},
+										{
+											"key": "amount",
+											"value": "1200"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:37:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"667983fb2e8c7814c7151311\",\n    \"month\": \"Sep\",\n    \"amount\": 1200\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Revenue",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/revenues/delete?id=6679f55ca4e79014dd13ccd1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"revenues",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6679f55ca4e79014dd13ccd1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deleted Revenue Successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/delete?id=6679f55ca4e79014dd13ccd1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679f55ca4e79014dd13ccd1"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:38:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Revenue Not Found (After Deletion)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/revenues/delete?id=6679f55ca4e79014dd13ccd1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"revenues",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679f55ca4e79014dd13ccd1"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:39:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Test",
+					"item": [
+						{
+							"name": "Test Controller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"test"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Controller",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/users/test",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"users",
+												"test"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "26"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 22:52:04 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "User Controller is working"
+								}
+							]
+						},
+						{
+							"name": "Test Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/saveTest",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"saveTest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Test Save",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8091/users/saveTest",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8091",
+											"path": [
+												"users",
+												"saveTest"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 22:52:41 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"6679f8b9a4e79014dd13ccd5\",\n    \"email\": \"example@mail.com\",\n    \"name\": \"Example Example\",\n    \"password\": \"example-password\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"new-user@nextmail.com\",\r\n    \"name\": \"User\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/users/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Save User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"new-user@nextmail.com\",\r\n    \"name\": \"User\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/users/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:49:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6679f80ba4e79014dd13ccd4\",\n    \"email\": \"new-user@nextmail.com\",\n    \"name\": \"User\",\n    \"password\": \"password\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:45:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"65c75b2b73b88a64e764a0ad\",\n        \"email\": \"user@nextmail.com\",\n        \"name\": \"User\",\n        \"password\": \"$2b$10$DguTx/lGRsBijGlqbDyxF.vEMxyTXNPLGXKhzh8WYH.jAwKS1mQa2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/id/65c75b2b73b88a64e764a0ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"id",
+								"65c75b2b73b88a64e764a0ad"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/id/65c75b2b73b88a64e764a0ad",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"id",
+										"65c75b2b73b88a64e764a0ad"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:45:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65c75b2b73b88a64e764a0ad\",\n    \"email\": \"user@nextmail.com\",\n    \"name\": \"User\",\n    \"password\": \"$2b$10$DguTx/lGRsBijGlqbDyxF.vEMxyTXNPLGXKhzh8WYH.jAwKS1mQa2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User by Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/email/user@nextmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"email",
+								"user@nextmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User by Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/email/user@nextmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"email",
+										"user@nextmail.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline;filename=f.txt"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:45:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65c75b2b73b88a64e764a0ad\",\n    \"email\": \"user@nextmail.com\",\n    \"name\": \"User\",\n    \"password\": \"$2b$10$DguTx/lGRsBijGlqbDyxF.vEMxyTXNPLGXKhzh8WYH.jAwKS1mQa2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/update?id=65c75b2b73b88a64e764a0ad&email=user.updated@nextmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "65c75b2b73b88a64e764a0ad"
+								},
+								{
+									"key": "email",
+									"value": "user.updated@nextmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/update?id=65c75b2b73b88a64e764a0ad&email=user-updated@nextmail.com&name=User Updated",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65c75b2b73b88a64e764a0ad"
+										},
+										{
+											"key": "email",
+											"value": "user-updated@nextmail.com"
+										},
+										{
+											"key": "name",
+											"value": "User Updated"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:47:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65c75b2b73b88a64e764a0ad\",\n    \"email\": \"user-updated@nextmail.com\",\n    \"name\": \"User Updated\",\n    \"password\": \"$2b$10$DguTx/lGRsBijGlqbDyxF.vEMxyTXNPLGXKhzh8WYH.jAwKS1mQa2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/delete?id=6679f80ba4e79014dd13ccd4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6679f80ba4e79014dd13ccd4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Deleted Successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/delete?id=6679f80ba4e79014dd13ccd4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679f80ba4e79014dd13ccd4"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:50:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "User Not Found (After Deletion)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8091/users/delete?id=6679f80ba4e79014dd13ccd4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"users",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6679f80ba4e79014dd13ccd4"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 22:50:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
