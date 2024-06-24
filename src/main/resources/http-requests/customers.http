@@ -14,9 +14,9 @@ GET http://localhost:8091/customers/id/65c75b2973b88a64e7649b3d
 GET http://localhost:8091/customers/numberOfCustomers
 ###
 
-# Obtain the number of pages returned from a search query
-# Format: http://localhost:8091/customers/numberOfPages?query=delba
-GET http://localhost:8091/customers/numberOfPages?query=delba
+# Obtain the number of invoices where the customer’s name matches the search bar parameter
+# Format: http://localhost:8091/customers/numberOfRelatedInvoices?query=delba
+GET http://localhost:8091/customers/numberOfRelatedInvoices?query=ste
 ###
 
 # Execute an aggregation needed for the customers page in the front-end

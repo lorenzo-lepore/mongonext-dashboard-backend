@@ -66,9 +66,9 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getNumberOfCustomers(), HttpStatus.OK);
     }
 
-    @GetMapping("/numberOfPages")
-    public ResponseEntity<Integer> getNumberOfPages(@RequestParam String query) {
-        return new ResponseEntity<>(customerService.getNumberOfPages(query), HttpStatus.OK);
+    @GetMapping("/numberOfRelatedInvoices")
+    public ResponseEntity<Integer> getNumberOfRelatedInvoices(@RequestParam String query) {
+        return new ResponseEntity<>(customerService.getNumberOfRelatedInvoices(query), HttpStatus.OK);
     }
 
     @PutMapping("/update")

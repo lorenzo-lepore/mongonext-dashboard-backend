@@ -11,7 +11,7 @@ public interface CustomerService {
     Customer saveCustomer(Customer customer);
     List<Customer> getAllCustomers();
     int getNumberOfCustomers();
-    int getNumberOfPages(String query);
+    int getNumberOfRelatedInvoices(String query);
     List<Document> aggregateToInvoices(String query);
     Optional<Customer> getCustomerById(String id);
     Customer updateCustomer(Customer existingCustomer, String email, String imageURL, String name);

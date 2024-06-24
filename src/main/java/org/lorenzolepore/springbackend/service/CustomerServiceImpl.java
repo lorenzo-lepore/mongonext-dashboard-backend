@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public int getNumberOfPages(String query) {
+    public int getNumberOfRelatedInvoices(String query) {
         List<AggregationOperation> operations = new ArrayList<>();
 
         operations.add(Aggregation.lookup("customers", "customer_id", "_id", "customer"));
