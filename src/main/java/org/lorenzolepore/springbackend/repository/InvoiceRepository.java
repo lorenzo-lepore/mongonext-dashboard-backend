@@ -1,16 +1,15 @@
 package org.lorenzolepore.springbackend.repository;
 
-import org.lorenzolepore.springbackend.model.Invoice;
+import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import org.lorenzolepore.springbackend.model.Invoice;
 
 @Repository
 public interface InvoiceRepository extends MongoRepository<Invoice,String> {
     List<Invoice> findTop5ByOrderByDateDesc();
     List<Invoice> findByStatus(String status);
-    Invoice findInvoicesById(String id);
     void deleteById(String id);
 }

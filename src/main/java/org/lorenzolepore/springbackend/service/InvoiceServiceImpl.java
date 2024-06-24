@@ -1,24 +1,23 @@
 package org.lorenzolepore.springbackend.service;
 
-import org.bson.types.ObjectId;
-import org.lorenzolepore.springbackend.model.AggregationResult;
-import org.lorenzolepore.springbackend.model.Invoice;
-import org.lorenzolepore.springbackend.repository.InvoiceRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
+import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.stereotype.Service;
+
+import org.lorenzolepore.springbackend.model.AggregationResult;
+import org.lorenzolepore.springbackend.model.Invoice;
+import org.lorenzolepore.springbackend.repository.InvoiceRepository;
 
 import org.bson.Document;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import org.bson.types.ObjectId;
 
 @Service
 public class InvoiceServiceImpl implements InvoiceService {
@@ -32,29 +31,8 @@ public class InvoiceServiceImpl implements InvoiceService {
     private static final int ITEMS_PER_PAGE = 6;
 
     @Override
-    public void saveInvoice(Invoice invoice) {
-        invoiceRepository.save(invoice);
-    }
-
-    public void deleteInvoice(String id) {
-        invoiceRepository.deleteById(id);
-    }
-
-    @Override
-    public void updateInvoice(String id, String customerId, int amount, String status) {
-        Optional<Invoice> invoice = invoiceRepository.findById(id);
-
-        if (invoice.isPresent()) {
-            Invoice extractedInvoice = invoice.get();
-
-            extractedInvoice.setCustomerId(new ObjectId(customerId));
-            extractedInvoice.setAmount(amount);
-            extractedInvoice.setStatus(status);
-
-            invoiceRepository.save(extractedInvoice);
-        } else {
-            throw new RuntimeException("Invoice not found");
-        }
+    public Invoice saveInvoice(Invoice invoice) {
+        return invoiceRepository.save(invoice);
     }
 
     @Override
@@ -131,5 +109,25 @@ public class InvoiceServiceImpl implements InvoiceService {
         Aggregation aggregation = Aggregation.newAggregation(operations);
 
         return mongoTemplate.aggregate(aggregation, "invoices", AggregationResult.class).getMappedResults();
+    }
+
+    @Override
+    public Invoice updateInvoice(Invoice existingInvoice, String customerId, Integer amount, String status) {
+        if (customerId != null) existingInvoice.setCustomerId(new ObjectId(customerId));
+        if (amount != null) existingInvoice.setAmount(amount);
+        if (status != null) existingInvoice.setStatus(status);
+
+        return invoiceRepository.save(existingInvoice);
+    }
+
+    public boolean deleteInvoice(String id) {
+        Optional<Invoice> invoice = invoiceRepository.findById(id);
+
+        if (invoice.isPresent()) {
+            invoiceRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

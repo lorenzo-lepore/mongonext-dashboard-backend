@@ -13,10 +13,8 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 // Configuration class to remove _class field from MongoDB documents
 @Configuration
 public class SpringMongoConfiguration {
-
     @Bean
-    public MappingMongoConverter mappingMongoConverter(MongoDatabaseFactory factory, MongoMappingContext context,
-                                                       BeanFactory beanFactory) {
+    public MappingMongoConverter mappingMongoConverter(MongoDatabaseFactory factory, MongoMappingContext context, BeanFactory beanFactory) {
         DbRefResolver dbRefResolver = new DefaultDbRefResolver(factory);
         MappingMongoConverter mappingConverter = new MappingMongoConverter(dbRefResolver, context);
         mappingConverter.setTypeMapper(new DefaultMongoTypeMapper(null));

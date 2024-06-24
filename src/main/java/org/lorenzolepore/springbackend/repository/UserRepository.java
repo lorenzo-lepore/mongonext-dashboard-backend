@@ -1,13 +1,13 @@
 package org.lorenzolepore.springbackend.repository;
 
-import org.bson.types.ObjectId;
-import org.lorenzolepore.springbackend.model.User;
+import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import org.lorenzolepore.springbackend.model.User;
+
 @Repository
 public interface UserRepository extends MongoRepository<User,String> {
-    User findByEmail(String email);
-    // User findBy_id(ObjectId id);
+    Optional<User> findByEmail(String email);
 }

@@ -1,0 +1,55 @@
+## CRUD APIs ##
+
+# ATTENTION: revenues are not ordered by month by default;
+#            To meet the frontend requirements needed for
+#            correct functionality some rules must be followed:
+#             - revenues must be ordered by month (only for data displaying purposes, since sorting is not treated).
+#             - if each month has already one revenue, redundat revenues must be deleted.
+########################
+
+# Retrieve all revenues
+GET http://localhost:8091/revenues/all
+###
+
+# Retrieve a revenue by id
+# Format: http://localhost:8091/revenues/{id}
+# Example: http://localhost:8091/revenues/667984752e8c7814c7151314
+GET http://localhost:8091/revenues/id/667983f52e8c7814c7151310
+###
+
+# Update a revenue
+# Format: http://localhost:8091/revenues/update?id={id}&amount={amount}
+# Example: http://localhost:8091/revenues/update?id=667982232e8c7814c7151300&amount=1800
+# Note: month is not updatable (frontend constraint)
+PUT http://localhost:8091/revenues/update?id=667983fb2e8c7814c7151311&amount=1200
+###
+
+# Delete a revenue by id
+# Format: http://localhost:8091/revenues/delete?id={id}
+# Example: http://localhost:8091/revenues/delete?id=667982232e8c7814c7151300
+DELETE http://localhost:8091/revenues/delete?id=66798d72b0048576ff033468
+###
+
+# Save a revenue
+# Note: ObjectID is automatically assigned by MongoDB
+POST http://localhost:8091/revenues/save
+Content-Type: application/json
+
+{
+  "month": "Dec",
+  "amount": 2900
+}
+###
+
+## TESTING RELATED ###
+########################
+
+# Test the controller
+GET http://localhost:8091/revenues/test
+###
+
+# Save a default invoice
+POST http://localhost:8091/revenues/saveTest
+###
+
+

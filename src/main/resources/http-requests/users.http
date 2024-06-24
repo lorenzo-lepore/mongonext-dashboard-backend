@@ -1,0 +1,58 @@
+## CRUD APIs ##
+########################
+
+# Retrieve all users
+GET http://localhost:8091/users/all
+###
+
+# Retrieve a user by id
+# Format: http://localhost:8091/users/id/{id}
+# Example: http://localhost:8091/users/id/6679986f4c6c5d1c9e6c15ad
+GET http://localhost:8091/users/id/6679986f4c6c5d1c9e6c15ad
+###
+
+# Retrieve a user by email
+# Format: http://localhost:8091/users/email/{email}
+# Example: http://localhost:8091/users/email/user(at*)nextmail.com
+GET http://localhost:8091/users/email/example@mail.com
+###
+
+# Update a user
+# Format: http://localhost:8091/users/update?id={id}&email={email}&name={name}
+# Example: http://localhost:8091/users/update?id=65c75b2b73b88a64e764a0ad&email=user2(at*)nextmail.com&name=NewUser
+# Note: both email and name are optional, but at least one of them should be provided
+PUT http://localhost:8091/users/update?id=65c75b2b73b88a64e764a0ad&email=user@nextmail.com
+
+###
+
+# Delete a user
+# Format: http://localhost:8091/users/delete?id={id}
+# Example: http://localhost:8091/users/delete?id=65c75b2b73b88a64e764a0ad
+# Note: Don't delete the account 'User'
+DELETE http://localhost:8091/users/delete?id=667998fe4c6c5d1c9e6c15ae
+###
+
+# Save a user
+# Note: password are hashed on the frontend before saving during the normal use case scenario
+POST http://localhost:8091/users/save
+Content-Type: application/json
+
+{
+    "email": "user(at*)nextmail.com",
+    "name": "User",
+    "password": "password"
+}
+###
+
+## TESTING RELATED ###
+########################
+
+# Test the controller
+GET http://localhost:8091/users/test
+###
+
+# Save a default user
+POST http://localhost:8091/users/saveTest
+###
+
+

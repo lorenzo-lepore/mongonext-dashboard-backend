@@ -1,21 +1,21 @@
 package org.lorenzolepore.springbackend.service;
 
-import org.lorenzolepore.springbackend.model.Customer;
-import org.lorenzolepore.springbackend.repository.CustomerRepository;
+import java.util.*;
 
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.bson.types.ObjectId;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
+
+import org.lorenzolepore.springbackend.model.Customer;
+import org.lorenzolepore.springbackend.repository.CustomerRepository;
 
 import org.bson.Document;
-
-import java.util.*;
-
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -27,19 +27,13 @@ public class CustomerServiceImpl implements CustomerService {
     private MongoTemplate mongoTemplate;
 
     @Override
-    public void saveCustomer(Customer customer) {
-        customerRepository.save(customer);
+    public Customer saveCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 
     @Override
     public List<Customer> getAllCustomers() {
         return customerRepository.findAllByOrderByNameDesc();
-    }
-
-    @Override
-    public String getCustomerName(String id) {
-        Customer customer = customerRepository.findById(id).get();
-        return customer.getName();
     }
 
     @Override
@@ -77,7 +71,7 @@ public class CustomerServiceImpl implements CustomerService {
         Map<Object, Integer> totalPaidMap = new HashMap<>();
         Map<Object, Integer> totalPendingMap = new HashMap<>();
 
-        // Aggregazione per ottenere il totale degli importi delle fatture in stato "paid"
+        // Aggregation to get the total amount of paid invoices
         totalPaidOperations.add(Aggregation.match(Criteria.where("status").is("paid")));
         totalPaidOperations.add(Aggregation.group("customer_id").sum("amount").as("total_paid"));
 
@@ -88,7 +82,7 @@ public class CustomerServiceImpl implements CustomerService {
             totalPaidMap.put(document.get("_id"), document.getInteger("total_paid"));
         }
 
-        // Aggregazione per ottenere il totale degli importi delle fatture in stato "pending"
+        // Aggregation to get the total amount of pending invoices
         totalPendingOperations.add(Aggregation.match(Criteria.where("status").is("pending")));
         totalPendingOperations.add(Aggregation.group("customer_id").sum("amount").as("total_pending"));
 
@@ -99,7 +93,7 @@ public class CustomerServiceImpl implements CustomerService {
             totalPendingMap.put(document.get("_id"), document.getInteger("total_pending"));
         }
 
-        // Aggregazione finale
+        // Final aggregation
         if (!query.isEmpty()) {
             totalInvoicesOperations.add(Aggregation.match(
                     new Criteria().orOperator(
@@ -126,5 +120,26 @@ public class CustomerServiceImpl implements CustomerService {
             document.put("total_pending", totalPendingMap.getOrDefault(customerId, 0));
         }
         return results3;
+    }
+
+    @Override
+    public Customer updateCustomer(Customer existingCustomer, String email, String imageUrl, String name) {
+        if (email != null) existingCustomer.setEmail(email);
+        if (imageUrl != null) existingCustomer.setImageUrl(imageUrl);
+        if (name != null) existingCustomer.setName(name);
+
+        return customerRepository.save(existingCustomer);
+    }
+
+    @Override
+    public boolean deleteCustomer(String id) {
+        Optional<Customer> customer = customerRepository.findById(id);
+
+        if (customer.isPresent()) {
+            customerRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

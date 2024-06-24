@@ -1,17 +1,19 @@
 package org.lorenzolepore.springbackend.controller;
 
-import org.bson.types.ObjectId;
-import org.lorenzolepore.springbackend.model.AggregationResult;
-import org.lorenzolepore.springbackend.model.Invoice;
-import org.lorenzolepore.springbackend.service.InvoiceService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import org.bson.Document;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import org.lorenzolepore.springbackend.model.Invoice;
+import org.lorenzolepore.springbackend.model.AggregationResult;
+import org.lorenzolepore.springbackend.service.InvoiceService;
 
 @RestController
 @RequestMapping("/invoices")
@@ -21,86 +23,115 @@ public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
 
-    @GetMapping("/test")
-    public String test() {
-        return "Invoice Controller is working";
+    /* TESTING RELATED */
+
+    @PostMapping("/saveTest")
+    public ResponseEntity<Invoice> saveTest() {
+        return new ResponseEntity<>(invoiceService.saveInvoice(new Invoice(new ObjectId(), 123, "pending")), HttpStatus.OK);
     }
 
-    @GetMapping("/savetest")
-    public String saveTest() {
-        Invoice invoice = new Invoice(new ObjectId(), 123, "pending");
-        invoiceService.saveInvoice(invoice);
-        return "Invoice saved.";
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return new ResponseEntity<>("Invoice Controller is working", HttpStatus.OK);
     }
 
     @GetMapping("/aggregate")
-    public List<Document> aggregate() {
-        return invoiceService.aggregate();
+    public ResponseEntity<List<Document>> aggregate() {
+        return new ResponseEntity<>(invoiceService.aggregate(), HttpStatus.OK);
+    }
+
+    /* CRUD METHODS */
+
+    @PostMapping("/save")
+    public ResponseEntity<Invoice> saveInvoice(
+            @RequestParam String customerId,
+            @RequestParam int amount,
+            @RequestParam String status
+    ) {
+        return new ResponseEntity<>(invoiceService.saveInvoice(new Invoice(new ObjectId(customerId), amount, status)), HttpStatus.OK);
     }
 
     @GetMapping("/all")
-    public List<Invoice> getAllInvoices() {
-        return invoiceService.getAllInvoices();
+    public ResponseEntity<List<Invoice>> getAllInvoices() {
+        return new ResponseEntity<>(invoiceService.getAllInvoices(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Optional<Invoice> getInvoiceById(@PathVariable String id) {
-        return invoiceService.getInvoiceById(id);
-    }
-
-    @GetMapping("/save")
-    public String saveInvoice(
-            @RequestParam String customerId,
-            @RequestParam int amount,
-            @RequestParam String status
-    ) {
-        Invoice invoice = new Invoice(new ObjectId(customerId), amount, status);
-        invoiceService.saveInvoice(invoice);
-        return "Invoice saved.";
-    }
-
-    @GetMapping("/delete")
-    public String deleteInvoice(@RequestParam String id) {
-        invoiceService.deleteInvoice(id);
-        return "Invoice deleted.";
-    }
-
-    @GetMapping("/update")
-    public String updateInvoice(
-            @RequestParam String id,
-            @RequestParam String customerId,
-            @RequestParam int amount,
-            @RequestParam String status
-    ) {
-        invoiceService.updateInvoice(id, customerId, amount, status);
-        return "Invoice updated.";
+    public ResponseEntity<Invoice> getInvoiceById(@PathVariable String id) {
+        Optional<Invoice> invoice = invoiceService.getInvoiceById(id);
+        if (invoice.isPresent()) {
+            return new ResponseEntity<>(invoice.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/latest")
-    public List<Invoice> getLatestInvoice() {
-        return invoiceService.getLatestInvoices();
+    public ResponseEntity<List<Invoice>> getLatestInvoice() {
+        return new ResponseEntity<>(invoiceService.getLatestInvoices(), HttpStatus.OK);
     }
 
     @GetMapping("/numberOfInvoices")
-    public int getInvoicesNumber() {
-        return invoiceService.getInvoicesNumber();
+    public ResponseEntity<Integer> getInvoicesNumber() {
+        return new ResponseEntity<>(invoiceService.getInvoicesNumber(), HttpStatus.OK);
     }
 
     @GetMapping("/sumOfPaidInvoices")
-    public int getSumOfPaidInvoices() {
-        return invoiceService.getSumOfPaidInvoices();
+    public ResponseEntity<Integer> getSumOfPaidInvoices() {
+        return new ResponseEntity<>(invoiceService.getSumOfPaidInvoices(), HttpStatus.OK);
     }
 
     @GetMapping("/sumOfPendingInvoices")
-    public int getSumOfPendingInvoices() {
-        return invoiceService.getSumOfPendingInvoices();
+    public ResponseEntity<Integer> getSumOfPendingInvoices() {
+        return new ResponseEntity<>(invoiceService.getSumOfPendingInvoices(), HttpStatus.OK);
     }
 
     @GetMapping("/getFilteredInvoices")
-    public List<AggregationResult> getFilteredInvoices(
+    public ResponseEntity<List<AggregationResult>> getFilteredInvoices(
             @RequestParam String query,
             @RequestParam int currentPage
     ) {
-        return invoiceService.getFilteredInvoices(query, currentPage);
+        return new ResponseEntity<>(invoiceService.getFilteredInvoices(query, currentPage), HttpStatus.OK);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Invoice> updateInvoice(
+            @RequestParam String id,
+            @RequestParam (required = false) Optional<String> customerId,
+            @RequestParam (required = false) Optional<Integer> amount,
+            @RequestParam (required = false) Optional<String> status
+    ) {
+        System.out.println("id: " + id + "\n");
+        System.out.println("customerId: " + customerId.orElse(null) + "\n");
+        System.out.println("amount: " + amount.orElse(null) + "\n");
+        System.out.println("status: " + status.orElse(null) + "\n");
+
+        Optional<Invoice> existingInvoice = invoiceService.getInvoiceById(id);
+
+        String customerIdValue = customerId.orElse(null);
+        Integer amountValue = amount.orElse(null);
+        String statusValue = status.orElse(null);
+
+        if (
+                (customerIdValue != null && customerIdValue.length() != 24) ||
+                (amountValue != null && amountValue < 0) ||
+                (statusValue != null && !statusValue.equals("pending") && !statusValue.equals("paid"))
+        ) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        if (existingInvoice.isPresent()) {
+            Invoice savedInvoice = invoiceService.updateInvoice(existingInvoice.get(), customerIdValue, amountValue, statusValue);
+            return new ResponseEntity<>(savedInvoice, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<Void> deleteInvoice(@RequestParam String id) {
+        boolean isDeleted = invoiceService.deleteInvoice(id);
+        return isDeleted ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
+                         : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

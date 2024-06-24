@@ -1,0 +1,58 @@
+## CRUD APIs ##
+########################
+
+# Obtain all customers
+GET http://localhost:8091/customers/all
+###
+
+# Obtain a designated customer
+# Format: http://localhost:8091/customers/id/{id}
+GET http://localhost:8091/customers/id/65c75b2973b88a64e7649b3d
+###
+
+# Obtain the total number of customers
+GET http://localhost:8091/customers/numberOfCustomers
+###
+
+# Obtain the number of pages returned from a search query
+# Format: http://localhost:8091/customers/numberOfPages?query=delba
+GET http://localhost:8091/customers/numberOfPages?query=delba
+###
+
+# Execute an aggregation needed for the customers page in the front-end
+# Format: http://localhost:8091/customers/getFilteredAggregation?query={query}
+GET http://localhost:8091/customers/getFilteredAggregation?query=
+###
+
+# Update a designated customer
+# Format: http://localhost:8091/customers/update?id={id}&email={email}&imageUrl={imageUrl}&name={name}
+PUT http://localhost:8091/customers/update?id=65c75b2973b88a64e7649b3d&name=Steven+Tay
+###
+
+# Delete a designated customer
+# Format: http://localhost:8091/customers/delete?id={id}
+DELETE http://localhost:8091/customers/delete?id=66791c834c47140ad3da934a
+###
+
+# Save a customer
+# Note: ObjectID is automatically assigned by MongoDB
+POST http://localhost:8091/customers/save
+Content-Type: application/json
+
+{
+  "email": "example@mail.com",
+  "imageUrl": "/example.jpg",
+  "name": "Example Example"
+}
+###
+
+## TESTING RELATED ###
+########################
+
+# Test the controller
+GET http://localhost:8091/customers/test
+###
+
+# Save a default customer
+POST http://localhost:8091/customers/saveTest
+###

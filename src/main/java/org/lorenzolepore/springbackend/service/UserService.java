@@ -1,13 +1,15 @@
 package org.lorenzolepore.springbackend.service;
 
-import org.lorenzolepore.springbackend.model.User;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.lorenzolepore.springbackend.model.User;
+
 public interface UserService {
-    public void saveUser(User user);
-    public List<User> getAllUsers();
-    public User getUserByEmail(String email);
-    public Optional<User> getUserById(String id);
+    User saveUser(User user);
+    List<User> getAllUsers();
+    Optional <User> getUserByEmail(String email);
+    Optional<User> getUserById(String id);
+    User updateUser(User existingUser, String email, String name);
+    boolean deleteUser(String id);
 }

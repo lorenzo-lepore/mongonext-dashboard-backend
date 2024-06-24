@@ -1,0 +1,70 @@
+## CRUD APIs ##
+########################
+
+# Obtain all the invoices
+GET http://localhost:8091/invoices/all
+###
+
+# Obtain a designated invoice
+# Format: http://localhost:8091/invoices/{id}
+# Example: http://localhost:8091/invoices/667948122e8c7814c71512d3
+GET http://localhost:8091/invoices/667948122e8c7814c71512d3
+###
+
+# Obtain the latest invoices (last 5)
+GET http://localhost:8091/invoices/latest
+###
+
+# Obtain the total number of invoices
+GET http://localhost:8091/invoices/numberOfInvoices
+###
+
+# Obtain the total amount of 'paid' invoices
+GET http://localhost:8091/invoices/sumOfPaidInvoices
+###
+
+# Obtain the total amount of 'pending' invoices
+GET http://localhost:8091/invoices/sumOfPendingInvoices
+###
+
+# Obtain invoices filtered by search query
+# Format: http://localhost:8091/invoices/getFilteredInvoices?query={query}&currentPage={currentPage}
+# Example: http://localhost:8091/invoices/getFilteredInvoices?query=del&currentPage=1
+GET http://localhost:8091/invoices/getFilteredInvoices?query=del&currentPage=1
+###
+
+# Save a default invoice
+POST http://localhost:8091/invoices/saveTest
+###
+
+# Save an invoice using parameters
+# Format: http://localhost:8091/invoices/save?customerId={customerId}&amount={amount}&status={status}
+# Example: http://localhost:8091/invoices/save?customerId=65c75b2973b88a64e7649b3f&amount=1000&status=pending
+POST http://localhost:8091/invoices/save?customerId=65c75b2973b88a64e7649b3f&amount=10001&status=paid
+###
+
+# Delete an invoice
+# Format: http://localhost:8091/invoices/delete?id={id}
+# Example: http://localhost:8091/invoices/delete?id=66781fdcbc74e727fd60f2b4
+DELETE http://localhost:8091/invoices/delete?id=667975ce2e8c7814c71512ec
+###
+
+# Update an invoice
+# Format: http://localhost:8091/invoices/update?id={id}&customerId={customerId}&amount={amount}&status={status}
+# Example: http://localhost:8091/invoices/update?id=66784abe701beb18965e63c5&amount=1001
+PUT http://localhost:8091/invoices/update?id=66794fdc2e8c7814c71512de&amount=12344&status=paid
+
+## TESTING RELATED ###
+########################
+
+# Test the controller
+GET http://localhost:8091/invoices/test
+###
+
+# Save a default invoice
+POST http://localhost:8091/invoices/saveTest
+###
+
+# Obtain an aggregation with the customers collection
+GET http://localhost:8091/invoices/aggregate
+###
