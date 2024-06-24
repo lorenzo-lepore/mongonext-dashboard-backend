@@ -33,10 +33,6 @@ GET http://localhost:8091/invoices/sumOfPendingInvoices
 GET http://localhost:8091/invoices/getFilteredInvoices?query=del&currentPage=1
 ###
 
-# Save a default invoice
-POST http://localhost:8091/invoices/saveTest
-###
-
 # Save an invoice using parameters
 # Format: http://localhost:8091/invoices/save?customerId={customerId}&amount={amount}&status={status}
 # Example: http://localhost:8091/invoices/save?customerId=65c75b2973b88a64e7649b3f&amount=1000&status=pending
