@@ -1,14 +1,13 @@
 name: Greeter
 
-on: [issues]
+on: [pull_request, issues]
 
 jobs:
-  issue-greeter:
+  greet:
     runs-on: ubuntu-latest
-
     steps:
-      - name: "Greeter"
-        uses: anishanne/greeter@V1
+      - uses: actions/first-interaction@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: "![](https://cdn.anishdoes.dev/githublight.png)\nHey @{user}! Welcome to the **MongoNext Backend** repo on **Github**."
+          issue-message: 'Grazie per aver segnalato questo problema. Verrà esaminato al più presto.'
+          pr-message: 'Grazie per il tuo contributo! Esamineremo la tua pull request quanto prima.'
