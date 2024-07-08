@@ -1,0 +1,18 @@
+name: mongonext-backend-greetings
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sam Jackson Greeter
+        uses: lob/action_sam_jackson@0.0.2
+        with:
+          message: 'Hey there! Thanks for the contributions!'
+          token: ${{ secrets.GITHUB_TOKEN }}
