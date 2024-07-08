@@ -1,4 +1,4 @@
-name: mongonext-backend-with-maven
+name: Build with Maven
 
 on:
   push:
