@@ -1,13 +1,23 @@
 name: Greeter
 
-on: [pull_request, issues]
+on:
+  issues:
+    types: [closed]
+  pull_request:
+    types: [closed]
 
 jobs:
-  greet:
+  greeting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/first-interaction@v1
+      - uses: Manoj-Paramsetti/greets-action@main
+        if: ${{ github.event.pull_request.merged == true }}
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: 'Grazie per aver segnalato questo problema. Verrà esaminato al più presto.'
-          pr-message: 'Grazie per il tuo contributo! Esamineremo la tua pull request quanto prima.'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_message: 'Grazie @${{ github.actor }} per il tuo contributo! La tua pull request è stata unita con successo.'
+      - uses: Manoj-Paramsetti/greets-action@main
+        if: ${{ github.event.pull_request.merged == false}}
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: 'Grazie @${{ github.actor }} per aver segnalato questo problema. La issue è stata chiusa.'
+          pr_message: 'Grazie @${{ github.actor }} per la tua pull request. Purtroppo non è stata unita, ma apprezziamo il tuo contributo.'
