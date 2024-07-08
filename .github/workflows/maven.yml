@@ -13,6 +13,9 @@ jobs:
     steps:
     - name: Sam Jackson Greeter
       uses: lob/action_sam_jackson@0.0.2
+      with:
+        message: '<Greetings! Welcome to my Github repository. />'
+        token: ${{secrets.GITHUB_TOKEN}}
 
     - name: Checkout code
       uses: actions/checkout@v4
