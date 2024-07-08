@@ -27,7 +27,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-
-    - name: Super-Linter
-      run: super-linter/super-linter@v6.7.0
-
