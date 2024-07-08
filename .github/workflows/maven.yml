@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-java@v4.2.1
       with:
         java-version: '22.0.1'
+        distribution: 'oracle'
 
     - name: Set up Maven
       uses: stCarolas/setup-maven@v5

@@ -1,18 +1,14 @@
-name: mongonext-backend-greetings
+name: issue-greeter-mongonext-backend
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [issues]
 
 jobs:
-  build:
+  issue-greeter:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Sam Jackson Greeter
-        uses: lob/action_sam_jackson@0.0.2
+      - name: "Greeter"
+        uses: anishanne/greeter@V1
         with:
-          message: 'Hey there! Thanks for the contributions!'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: "![](https://cdn.anishdoes.dev/githublight.png)\nHey @{user}! Welcome to the **MongoNext Backend** repo on **Github**.
