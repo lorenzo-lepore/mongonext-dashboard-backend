@@ -13,7 +13,7 @@ services:
     image: mongonext-backend
     container_name: mongonext-backend
     ports:
-      - "8080:8080"
+      - "8091:8091"
     links:
         - mongodb
   mongo-express:
