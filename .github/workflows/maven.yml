@@ -1,4 +1,4 @@
-name: Build with Maven
+name: Build with Maven & Push image to Docker Hub
 
 on:
   push:
