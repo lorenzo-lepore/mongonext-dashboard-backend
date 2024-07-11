@@ -34,7 +34,7 @@ public class UserController {
     /* CRUD methods */
 
     @PostMapping("/save")
-    public ResponseEntity<User> save(@RequestBody User user) {;
+    public ResponseEntity<User> save(@RequestBody User user) {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
     }
 

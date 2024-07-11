@@ -101,11 +101,6 @@ public class InvoiceController {
             @RequestParam (required = false) Optional<Integer> amount,
             @RequestParam (required = false) Optional<String> status
     ) {
-        System.out.println("id: " + id + "\n");
-        System.out.println("customerId: " + customerId.orElse(null) + "\n");
-        System.out.println("amount: " + amount.orElse(null) + "\n");
-        System.out.println("status: " + status.orElse(null) + "\n");
-
         Optional<Invoice> existingInvoice = invoiceService.getInvoiceById(id);
 
         String customerIdValue = customerId.orElse(null);
